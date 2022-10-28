@@ -1,0 +1,185 @@
+Refract,Reading,Trial,Solution,Dilution factor
+yellow,9.81,1,espresso,1
+DiFluid Coffee,9.66,1,espresso,1
+DiFluid R2,10.23,1,espresso,1
+atago,9.53,1,espresso,1
+yellow,9.85,1,espresso,1
+DiFluid Coffee,9.76,1,espresso,1
+DiFluid R2,10.2,1,espresso,1
+atago,9.62,1,espresso,1
+yellow,9.85,1,espresso,1
+DiFluid Coffee,9.76,1,espresso,1
+DiFluid R2,10.22,1,espresso,1
+atago,9.64,1,espresso,1
+yellow,9.88,1,espresso,1
+DiFluid Coffee,9.76,1,espresso,1
+DiFluid R2,10.39,1,espresso,1
+atago,9.67,1,espresso,1
+yellow,9.74,2,espresso,1
+DiFluid Coffee,9.86,2,espresso,1
+DiFluid R2,10.11,2,espresso,1
+atago,9.63,2,espresso,1
+yellow,9.78,2,espresso,1
+DiFluid Coffee,9.86,2,espresso,1
+DiFluid R2,10.11,2,espresso,1
+atago,9.71,2,espresso,1
+yellow,9.79,2,espresso,1
+DiFluid Coffee,9.86,2,espresso,1
+DiFluid R2,10.1,2,espresso,1
+atago,9.72,2,espresso,1
+yellow,9.76,3,espresso,1
+DiFluid Coffee,10.04,3,espresso,1
+DiFluid R2,10.18,3,espresso,1
+atago,9.8,3,espresso,1
+yellow,9.78,3,espresso,1
+DiFluid Coffee,10.04,3,espresso,1
+DiFluid R2,10.2,3,espresso,1
+atago,9.82,3,espresso,1
+yellow,9.81,3,espresso,1
+DiFluid Coffee,10.04,3,espresso,1
+DiFluid R2,10.22,3,espresso,1
+atago,9.82,3,espresso,1
+yellow,1.41,1,espresso,6.67
+DiFluid Coffee,1.48,1,espresso,6.67
+DiFluid R2,1.5,1,espresso,6.67
+atago,1.42,1,espresso,6.67
+yellow,1.43,1,espresso,6.67
+DiFluid Coffee,1.53,1,espresso,6.67
+DiFluid R2,1.51,1,espresso,6.67
+atago,1.43,1,espresso,6.67
+yellow,1.43,1,espresso,6.67
+DiFluid Coffee,1.53,1,espresso,6.67
+DiFluid R2,1.53,1,espresso,6.67
+atago,1.44,1,espresso,6.67
+yellow,1.53,2,espresso,6.67
+DiFluid Coffee,1.53,2,espresso,6.67
+DiFluid R2,1.51,2,espresso,6.67
+atago,1.4,2,espresso,6.67
+yellow,1.53,2,espresso,6.67
+DiFluid Coffee,1.48,2,espresso,6.67
+DiFluid R2,1.5,2,espresso,6.67
+atago,1.41,2,espresso,6.67
+yellow,1.55,2,espresso,6.67
+DiFluid Coffee,1.52,2,espresso,6.67
+DiFluid R2,1.49,2,espresso,6.67
+atago,1.42,2,espresso,6.67
+yellow,1.35,3,espresso,6.67
+DiFluid Coffee,1.43,3,espresso,6.67
+DiFluid R2,1.48,3,espresso,6.67
+atago,1.43,3,espresso,6.67
+yellow,1.38,3,espresso,6.67
+DiFluid Coffee,1.43,3,espresso,6.67
+DiFluid R2,1.5,3,espresso,6.67
+atago,1.44,3,espresso,6.67
+yellow,1.4,3,espresso,6.67
+DiFluid Coffee,1.43,3,espresso,6.67
+DiFluid R2,1.51,3,espresso,6.67
+atago,1.44,3,espresso,6.67
+yellow,6.61,1,filter 2.0,1
+DiFluid Coffee,6.99,1,filter 2.0,1
+DiFluid R2,7.12,1,filter 2.0,1
+atago,6.68,1,filter 2.0,1
+yellow,6.65,1,filter 2.0,1
+DiFluid Coffee,7.05,1,filter 2.0,1
+DiFluid R2,7.1,1,filter 2.0,1
+atago,6.75,1,filter 2.0,1
+yellow,6.65,1,filter 2.0,1
+DiFluid Coffee,7.05,1,filter 2.0,1
+DiFluid R2,7.1,1,filter 2.0,1
+atago,6.77,1,filter 2.0,1
+yellow,6.77,2,filter 2.0,1
+DiFluid Coffee,7.01,2,filter 2.0,1
+DiFluid R2,7.21,2,filter 2.0,1
+atago,6.73,2,filter 2.0,1
+yellow,6.8,2,filter 2.0,1
+DiFluid Coffee,7.06,2,filter 2.0,1
+DiFluid R2,7.19,2,filter 2.0,1
+atago,6.78,2,filter 2.0,1
+yellow,6.82,2,filter 2.0,1
+DiFluid Coffee,7.06,2,filter 2.0,1
+DiFluid R2,7.19,2,filter 2.0,1
+atago,6.79,2,filter 2.0,1
+yellow,7.9,3,filter 2.0,1
+DiFluid Coffee,7.12,3,filter 2.0,1
+DiFluid R2,7.2,3,filter 2.0,1
+atago,7,3,filter 2.0,1
+yellow,7.92,3,filter 2.0,1
+DiFluid Coffee,7.12,3,filter 2.0,1
+DiFluid R2,7.19,3,filter 2.0,1
+atago,7.01,3,filter 2.0,1
+yellow,7.92,3,filter 2.0,1
+DiFluid Coffee,7.12,3,filter 2.0,1
+DiFluid R2,7.17,3,filter 2.0,1
+atago,7.03,3,filter 2.0,1
+yellow,1.57,3,filter 2.0,5
+DiFluid Coffee,1.5,1,filter 2.0,5
+DiFluid R2,1.45,1,filter 2.0,5
+atago,1.34,1,filter 2.0,5
+yellow,1.6,1,filter 2.0,5
+DiFluid Coffee,1.5,1,filter 2.0,5
+DiFluid R2,1.44,1,filter 2.0,5
+atago,1.35,1,filter 2.0,5
+yellow,1.62,1,filter 2.0,5
+DiFluid Coffee,1.5,1,filter 2.0,5
+DiFluid R2,1.44,1,filter 2.0,5
+atago,1.36,1,filter 2.0,5
+yellow,1.65,2,filter 2.0,5
+DiFluid Coffee,1.39,2,filter 2.0,5
+DiFluid R2,1.43,2,filter 2.0,5
+atago,1.31,2,filter 2.0,5
+yellow,1.65,2,filter 2.0,5
+DiFluid Coffee,1.39,2,filter 2.0,5
+DiFluid R2,1.43,2,filter 2.0,5
+atago,1.34,2,filter 2.0,5
+yellow,1.65,2,filter 2.0,5
+DiFluid Coffee,1.39,2,filter 2.0,5
+DiFluid R2,1.42,2,filter 2.0,5
+atago,1.35,2,filter 2.0,5
+yellow,1.4,3,filter 2.0,5
+DiFluid Coffee,1.43,3,filter 2.0,5
+DiFluid R2,1.43,3,filter 2.0,5
+atago,1.36,3,filter 2.0,5
+yellow,1.4,3,filter 2.0,5
+DiFluid Coffee,1.43,3,filter 2.0,5
+DiFluid R2,1.44,3,filter 2.0,5
+atago,1.38,3,filter 2.0,5
+yellow,1.4,3,filter 2.0,5
+DiFluid Coffee,1.43,3,filter 2.0,5
+DiFluid R2,1.43,3,filter 2.0,5
+atago,1.38,3,filter 2.0,5
+yellow,3.55,1,filter 2.0,2
+DiFluid Coffee,3.62,1,filter 2.0,2
+DiFluid R2,3.59,1,filter 2.0,2
+atago,3.38,1,filter 2.0,2
+yellow,3.55,1,filter 2.0,2
+DiFluid Coffee,3.62,1,filter 2.0,2
+DiFluid R2,3.59,1,filter 2.0,2
+atago,3.41,1,filter 2.0,2
+yellow,3.57,1,filter 2.0,2
+DiFluid Coffee,3.62,1,filter 2.0,2
+DiFluid R2,3.58,1,filter 2.0,2
+atago,3.43,1,filter 2.0,2
+yellow,3.54,2,filter 2.0,2
+DiFluid Coffee,3.56,2,filter 2.0,2
+DiFluid R2,3.62,2,filter 2.0,2
+atago,3.35,2,filter 2.0,2
+yellow,3.56,2,filter 2.0,2
+DiFluid Coffee,3.56,2,filter 2.0,2
+DiFluid R2,3.62,2,filter 2.0,2
+atago,3.57,2,filter 2.0,2
+yellow,3.58,2,filter 2.0,2
+DiFluid Coffee,3.56,2,filter 2.0,2
+DiFluid R2,3.61,2,filter 2.0,2
+atago,3.39,2,filter 2.0,2
+yellow,3.43,3,filter 2.0,2
+DiFluid Coffee,3.6,3,filter 2.0,2
+DiFluid R2,3.55,3,filter 2.0,2
+atago,3.39,3,filter 2.0,2
+yellow,3.44,3,filter 2.0,2
+DiFluid Coffee,3.6,3,filter 2.0,2
+DiFluid R2,3.54,3,filter 2.0,2
+atago,3.39,3,filter 2.0,2
+yellow,3.44,3,filter 2.0,2
+DiFluid Coffee,3.6,3,filter 2.0,2
+DiFluid R2,3.54,3,filter 2.0,2
+atago,3.39,3,filter 2.0,2

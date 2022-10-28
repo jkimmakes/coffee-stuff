@@ -1,0 +1,288 @@
+---
+title: "Refractometer"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+
+refrac <- read_tsv("refract1.tsv")
+```
+
+```{r}
+refrac %>%
+  ggplot(aes(x=Refract, y=Reading, color=Owner)) +
+  geom_hline(aes(yintercept = Expected)) +
+  geom_point() +
+  facet_wrap(~Solution, scales="free_y")
+
+refrac %>%
+  ggplot(aes(x=Refract, y=Reading, color=Owner)) +
+  geom_boxplot() +
+  geom_hline(aes(yintercept = Expected)) +
+  facet_wrap(~Solution, scales="free_y") +
+  ggtitle("Comparison of refractometers")
+  
+refrac %>%
+  ggplot() +
+  geom_boxplot(aes(x=Refract, y=Reading, fill=Refract)) +
+  geom_point(aes(x=Refract, y=Reading, color=Owner)) +
+  geom_point(aes(x=Refract, y=Reading), pch=21, color="white") +
+  geom_hline(aes(yintercept = Expected)) +
+  facet_wrap(~Solution, scales="free_y") +
+  ggtitle("Comparison of refractometers")
+```
+
+```{r}
+refrac %>%
+  mutate(norm_reading = Reading / Expected) %>%
+  ggplot(aes(x=Refract, y=norm_reading, color=Owner)) +
+  geom_hline(yintercept = 1) +
+  geom_point() +
+  facet_wrap(~Solution, scales="free_y")
+
+# normalize readings
+refrac %>%
+  filter(!is.na(Expected)) %>%
+  mutate(norm_reading = Reading / Expected) %>%
+  ggplot() +
+  geom_boxplot(aes(x=Refract, y=norm_reading, color=Owner))
+
+refrac %>%
+  filter(!is.na(Expected)) %>%
+  filter(Solution != "2% Folgers") %>%
+  mutate(norm_reading = Reading / Expected) %>%
+  ggplot() +
+  geom_violin(aes(x=Refract, y=norm_reading, color=Owner))
+```
+
+
+
+Plot the error of each refractometer at different ratios
+```{r}
+# Center and scale
+refrac %>%
+  group_by(Refract, Owner, Solution) %>%
+  mutate(norm_reading = (Reading - mean(Reading))/mean(Reading) * 100) %>%
+  ggplot() +
+  geom_density(aes(norm_reading, fill = Refract), alpha=0.25) +
+  ggtitle("Center and scaled readings by refractometer")+
+  xlab("Percent error")
+
+refrac %>%
+  group_by(Refract, Owner, Solution) %>%
+  mutate(norm_reading = (Reading - mean(Reading))/mean(Reading)) %>%
+  ggplot(aes(x=Refract, y=norm_reading, color=Owner)) +
+  geom_boxplot() +
+  facet_wrap(~Solution) +
+  ggtitle("Centered and scaled") +
+  ylab("Centered and scaled")
+
+refrac %>%
+  filter(!Solution %in% c("Filter Brew", "2% Folgers")) %>%
+  group_by(Refract, Owner, Solution) %>%
+  mutate(norm_reading = (Reading - mean(Reading))/mean(Reading)) %>%
+  ggplot(aes(x=Refract, y=norm_reading, color=Owner)) +
+  geom_boxplot() +
+  facet_wrap(~Solution) +
+  ggtitle("Centered and scaled") +
+  ylab("Centered and scaled")
+
+# Known values only
+refrac %>%
+  filter(!is.na(Expected)) %>%
+  group_by(Refract, Owner, Solution) %>%
+  mutate(norm_reading = (Reading - Expected)/Expected * 100) %>%
+  ggplot() +
+  geom_density(aes(norm_reading, fill = Refract), alpha=0.25) +
+  ggtitle("Error relative to expected value")+
+  xlab("Percent error")
+
+refrac %>%
+  filter(!is.na(Expected)) %>%
+  group_by(Refract, Owner, Solution) %>%
+  mutate(norm_reading = (Reading - Expected)/Expected * 100) %>%
+  ggplot(aes(x=Refract, y=norm_reading, color=Owner)) +
+  geom_boxplot() +
+  facet_wrap(~Solution) +
+  ggtitle("Comparison of refractometers") +
+  ylab("Percent error")
+
+refrac %>%
+  filter(!is.na(Expected)) %>%
+  filter(Solution != "2% Folgers") %>%
+  group_by(Refract, Owner, Solution) %>%
+  mutate(norm_reading = (Reading - Expected)/Expected * 100) %>%
+  ggplot(aes(x=Refract, y=norm_reading, color=Owner)) +
+  geom_boxplot() +
+  facet_wrap(~Solution) +
+  ggtitle("Comparison of refractometers") +
+  ylab("Percent error")
+
+refrac %>%
+  filter(!is.na(Expected)) %>%
+  filter(Solution != "2% Folgers") %>%
+  group_by(Refract, Owner, Solution) %>%
+  mutate(norm_reading = (Reading - Expected)/Expected * 100) %>%
+  ggplot() +
+  geom_density(aes(norm_reading, fill = Refract), alpha=0.25) +
+  ggtitle("No 2% Folgers")+
+  xlab("Percent error")
+```
+
+
+```{r}
+# Let's see how the errors propogate to EY
+
+ey_key <- tribble(
+  ~Solution, ~ratio, ~type,
+  "9.95% Folgers", 2, "9.95% Folgers",
+  "9.95% Folgers 2", 2, "9.95% Folgers",
+  "2% Folgers", 10, "2% Folgers"
+  
+)
+
+refrac %>%
+  filter(Solution %in% c("9.95% Folgers", "9.95% Folgers 2", "2% Folgers")) %>%
+  left_join(ey_key, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  ggplot() +
+  geom_density(aes(diff_from_expected, fill=Refract), alpha=0.25) +
+  ggtitle("Error in Extraction Yield (%), Folgers Instant") +
+  xlab("Observed EY - Expected EY")
+
+refrac %>%
+  filter(Solution %in% c("9.95% Folgers", "9.95% Folgers 2", "2% Folgers")) %>%
+  left_join(ey_key, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  ggplot() +
+  geom_point(aes(x=expected_ey, y=predicted_ey, color=Refract)) +
+  ggtitle("Error in Extraction Yield(%), Folgers Instant")
+
+ratio_expansion <- ey_key %>%
+  expand(Solution, ratio=5:15) %>%
+  left_join(select(ey_key, Solution, type))
+
+refrac %>%
+  filter(Solution %in% c("2% Folgers")) %>%
+  left_join(ratio_expansion, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  group_by(expected_ey, Refract, ratio) %>%
+  summarise(mean_obs = mean(predicted_ey),
+            sd_high_obs = mean(predicted_ey) + sd(predicted_ey * 2),
+            sd_low_obs = mean(predicted_ey) - sd(predicted_ey * 2)) %>%
+  ungroup() %>%
+  ggplot(aes(x=expected_ey, y=mean_obs, color=Refract)) +
+  geom_line() +
+  geom_ribbon(aes(ymin=sd_low_obs, ymax=sd_high_obs, fill=Refract), alpha=0.25, color=NA) +
+  geom_abline() +
+  ggtitle("Error in Extraction Yield(%), Folgers Instant 2% TD, 2 sd ribbon")
+
+refrac %>%
+  filter(Solution %in% c("2% Folgers")) %>%
+  left_join(ratio_expansion, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  group_by(Owner, expected_ey, Refract, ratio) %>%
+  summarise(mean_obs = mean(predicted_ey),
+            sd_high_obs = mean(predicted_ey) + sd(predicted_ey * 2),
+            sd_low_obs = mean(predicted_ey) - sd(predicted_ey * 2)) %>%
+  ungroup() %>%
+  mutate(instrument = paste(Refract, Owner)) %>%
+  ggplot(aes(x=expected_ey, y=mean_obs, color=instrument)) +
+  geom_ribbon(aes(ymin=sd_low_obs, ymax=sd_high_obs, fill=instrument), alpha=0.25, color=NA) +
+  geom_line() +
+  geom_abline() +
+  ggtitle("Error in Extraction Yield(%), Folgers Instant 2% TDS, 2 sd ribbon") +
+  facet_wrap(~Refract, ncol=1)
+
+refrac %>%
+  filter(Solution %in% c("2% Folgers")) %>%
+  left_join(ratio_expansion, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  group_by(Owner, expected_ey, Refract, ratio) %>%
+  summarise(med_obs = median(predicted_ey),
+            high_obs = max(predicted_ey),
+            low_obs = min(predicted_ey)) %>%
+  ungroup() %>%
+  mutate(instrument = paste(Refract, Owner)) %>%
+  ggplot(aes(x=expected_ey, y=med_obs, color=instrument)) +
+  geom_ribbon(aes(ymin=low_obs, ymax=high_obs, fill=instrument), alpha=0.25, color=NA) +
+  geom_line() +
+  geom_abline() +
+  ggtitle("Error in Extraction Yield(%), Folgers Instant 2% TDS, min/max ribbon") +
+  facet_wrap(~Refract)
+
+
+ratio_expansion <- ey_key %>%
+  expand(Solution, ratio=(15:28)/10) %>%
+  left_join(select(ey_key, Solution, type))
+
+refrac %>%
+  filter(Solution %in% c("9.95% Folgers", "9.95% Folgers 2")) %>%
+    left_join(ratio_expansion, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  group_by(expected_ey, Refract, ratio) %>%
+  summarise(mean_obs = mean(predicted_ey),
+            sd_high_obs = mean(predicted_ey) + sd(predicted_ey) * 2,
+            sd_low_obs = mean(predicted_ey) - sd(predicted_ey) * 2) %>%
+  ungroup() %>%
+  ggplot(aes(x=expected_ey, y=mean_obs, color=Refract)) +
+  geom_line() +
+  geom_abline() +
+  geom_ribbon(aes(ymin=sd_low_obs, ymax=sd_high_obs, fill=Refract), alpha=0.25, color=NA) +
+  ggtitle("Error in Extraction Yield(%), Folgers Instant 9.95% TDS, 2 sd ribbon")
+
+refrac %>%
+  filter(Solution %in% c("9.95% Folgers", "9.95% Folgers 2")) %>%
+    left_join(ratio_expansion, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  group_by(Owner, expected_ey, Refract, ratio) %>%
+  summarise(mean_obs = mean(predicted_ey),
+            sd_high_obs = mean(predicted_ey) + sd(predicted_ey) * 2,
+            sd_low_obs = mean(predicted_ey) - sd(predicted_ey) * 2) %>%
+    mutate(instrument = paste(Refract, Owner)) %>%
+  ggplot(aes(x=expected_ey, y=mean_obs, color=instrument)) +
+  geom_ribbon(aes(ymin=sd_low_obs, ymax=sd_high_obs, fill=instrument), alpha=0.25, color=NA) +
+  geom_line() +
+  geom_abline() +
+  ggtitle("Error in Extraction Yield(%), Folgers Instant 9.95% TDS, 2 sd ribbon") +
+  facet_wrap(~Refract, ncol=1)
+
+refrac %>%
+  filter(Solution %in% c("9.95% Folgers", "9.95% Folgers 2")) %>%
+  left_join(ratio_expansion, by="Solution") %>%
+  mutate(predicted_ey = Reading * ratio) %>%
+  mutate(expected_ey = Expected * ratio) %>%
+  mutate(diff_from_expected = predicted_ey - expected_ey) %>%
+  group_by(Owner, expected_ey, Refract, ratio) %>%
+  summarise(med_obs = median(predicted_ey),
+            high_obs = max(predicted_ey),
+            low_obs = min(predicted_ey)) %>%
+  ungroup() %>%
+  mutate(instrument = paste(Refract, Owner)) %>%
+  ggplot(aes(x=expected_ey, y=med_obs, color=instrument)) +
+  geom_ribbon(aes(ymin=low_obs, ymax=high_obs, fill=instrument), alpha=0.25, color=NA) +
+  geom_line() +
+  geom_abline() +
+  ggtitle("Error in Extraction Yield(%), Folgers Instant 9.95% TDS, min/max ribbon") +
+  facet_wrap(~Refract, ncol=1)
+```
+
+
+```{r}
+
+```

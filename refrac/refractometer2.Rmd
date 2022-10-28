@@ -1,0 +1,74 @@
+---
+title: "Refractometer 2"
+output: html_notebook
+---
+```{r}
+library(tidyverse)
+
+refrac <- read_csv("/Users/jkim/Downloads/refract2.csv")
+
+knitr::opts_chunk$set(fig.width=8, fig.height=8) 
+```
+
+
+```{r}
+refrac %>%
+  group_by(Refract, Solution, `Dilution factor`) %>%
+  summarise(ave_reading = mean(Reading))
+```
+
+```{r}
+refrac %>%
+  ggplot(aes(x=Refract, y=Reading)) +
+  geom_point() +
+  facet_wrap(~Solution, scales="free_y")
+
+refrac %>%
+  mutate(diluted=1/`Dilution factor`) %>%
+  ggplot(aes(x=diluted, y=Reading, color=Refract)) +
+  geom_point() +
+    facet_wrap(~Solution, scales="free_y") +
+  geom_smooth(method='lm', formula= y~x)
+
+```
+
+
+
+```{r, fig.width=2, fig.height=2}
+refrac %>%
+  ggplot(aes(x=Refract, y=Reading, color=Refract)) +
+  geom_boxplot() +
+  facet_wrap(~Solution + `Dilution factor`, scales="free_y") +
+  theme(legend.position = "none") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+
+
+Check the linearity
+```{r, fig.width=2, fig.height=2}
+refrac %>%
+  filter(Solution == "filter 2.0") %>%
+    mutate(diluted=1/`Dilution factor`,
+           adjusted_tds=Reading * `Dilution factor`) %>%
+  ggplot(aes(x=`Dilution factor`, y=adjusted_tds, color=Refract)) +
+  geom_point()  +
+  geom_smooth(method='lm', formula= y~x) +
+  facet_wrap(~Refract) +
+  theme(legend.position = "none") +
+  ggtitle("Filter 2.1 Dilutions")
+```
+
+
+```{r, fig.width=2, fig.height=2}
+refrac %>%
+  filter(Solution == "espresso") %>%
+    mutate(diluted=1/`Dilution factor`,
+           adjusted_tds=Reading * `Dilution factor`) %>%
+  ggplot(aes(x=`Dilution factor`, y=adjusted_tds, color=Refract)) +
+  geom_point()  +
+  geom_smooth(method='lm', formula= y~x) +
+  facet_wrap(~Refract) +
+  theme(legend.position = "none") +
+  ggtitle("Espresso Dilutions")
+```

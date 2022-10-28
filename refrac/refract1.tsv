@@ -1,0 +1,148 @@
+Refract	Owner	Reading	Trial	Unit	Solution	Expected
+Yellow	John	10.06	1	Brix	10% Sugar	10
+Yellow	Brian	10.08	1	Brix	10% Sugar	10
+Yellow	Shay	10.08	1	Brix	10% Sugar	10
+DiFluid	Shay	10.17	1	Brix	10% Sugar	10
+DiFluid	John	10	1	Brix	10% Sugar	10
+DiFluid	Brian	9.97	1	Brix	10% Sugar	10
+Atago	Shay	9.97	1	Brix	10% Sugar	10
+Yellow	John	10.08	2	Brix	10% Sugar	10
+Yellow	Brian	10.12	2	Brix	10% Sugar	10
+Yellow	Shay	10.1	2	Brix	10% Sugar	10
+DiFluid	Shay	10.22	2	Brix	10% Sugar	10
+DiFluid	John	10.12	2	Brix	10% Sugar	10
+DiFluid	Brian	9.97	2	Brix	10% Sugar	10
+Atago	Shay	10	2	Brix	10% Sugar	10
+Yellow	John	10.15	3	Brix	10% Sugar	10
+Yellow	Brian	10.18	3	Brix	10% Sugar	10
+Yellow	Shay	10.18	3	Brix	10% Sugar	10
+DiFluid	Shay	10.33	3	Brix	10% Sugar	10
+DiFluid	John	10.15	3	Brix	10% Sugar	10
+DiFluid	Brian	10.04	3	Brix	10% Sugar	10
+Atago	Shay	10.09	3	Brix	10% Sugar	10
+Yellow	John	2.06	1	Brix	2% Sugar	2
+Yellow	Brian	2.08	1	Brix	2% Sugar	2
+Yellow	Shay	2.02	1	Brix	2% Sugar	2
+DiFluid	Shay	2.04	1	Brix	2% Sugar	2
+DiFluid	John	2.07	1	Brix	2% Sugar	2
+DiFluid	Brian	2.02	1	Brix	2% Sugar	2
+Atago	Shay	2.03	1	Brix	2% Sugar	2
+Yellow	John	2.06	2	Brix	2% Sugar	2
+Yellow	Brian	2.08	2	Brix	2% Sugar	2
+Yellow	Shay	2.02	2	Brix	2% Sugar	2
+DiFluid	Shay	2.05	2	Brix	2% Sugar	2
+DiFluid	John	2.07	2	Brix	2% Sugar	2
+DiFluid	Brian	2	2	Brix	2% Sugar	2
+Atago	Shay	2.02	2	Brix	2% Sugar	2
+Yellow	John	2.06	3	Brix	2% Sugar	2
+Yellow	Brian	2.09	3	Brix	2% Sugar	2
+Yellow	Shay	2.04	3	Brix	2% Sugar	2
+DiFluid	Shay	2.06	3	Brix	2% Sugar	2
+DiFluid	John	2.08	3	Brix	2% Sugar	2
+DiFluid	Brian	2	3	Brix	2% Sugar	2
+Atago	Shay	2.04	3	Brix	2% Sugar	2
+Yellow	John	9.76	1	TDS	9.95% Folgers	9.95
+Yellow	Brian	9.6	1	TDS	9.95% Folgers	9.95
+Yellow	Shay	9.63	1	TDS	9.95% Folgers	9.95
+DiFluid	Shay	9.72	1	TDS	9.95% Folgers	9.95
+DiFluid	John	9.67	1	TDS	9.95% Folgers	9.95
+DiFluid	Brian	9.66	1	TDS	9.95% Folgers	9.95
+Atago	Shay	10.3	1	TDS	9.95% Folgers	9.95
+Yellow	John	9.9	2	TDS	9.95% Folgers	9.95
+Yellow	Brian	9.65	2	TDS	9.95% Folgers	9.95
+Yellow	Shay	9.82	2	TDS	9.95% Folgers	9.95
+DiFluid	Shay	9.74	2	TDS	9.95% Folgers	9.95
+DiFluid	John	9.69	2	TDS	9.95% Folgers	9.95
+DiFluid	Brian	9.59	2	TDS	9.95% Folgers	9.95
+Atago	Shay	10.46	2	TDS	9.95% Folgers	9.95
+Yellow	John	9.93	3	TDS	9.95% Folgers	9.95
+Yellow	Brian	9.8	3	TDS	9.95% Folgers	9.95
+Yellow	Shay	9.78	3	TDS	9.95% Folgers	9.95
+DiFluid	Shay	9.88	3	TDS	9.95% Folgers	9.95
+DiFluid	John	9.82	3	TDS	9.95% Folgers	9.95
+DiFluid	Brian	9.74	3	TDS	9.95% Folgers	9.95
+Atago	Shay	10.44	3	TDS	9.95% Folgers	9.95
+Yellow	John	9.98	1	TDS	9.95% Folgers 2	9.95
+Yellow	Brian	9.99	1	TDS	9.95% Folgers 2	9.95
+Yellow	Shay	9.97	1	TDS	9.95% Folgers 2	9.95
+DiFluid	Shay	9.99	1	TDS	9.95% Folgers 2	9.95
+DiFluid	John	9.82	1	TDS	9.95% Folgers 2	9.95
+DiFluid	Brian	9.73	1	TDS	9.95% Folgers 2	9.95
+Atago	Shay	10.17	1	TDS	9.95% Folgers 2	9.95
+Yellow	John	10.05	2	TDS	9.95% Folgers 2	9.95
+Yellow	Brian	9.98	2	TDS	9.95% Folgers 2	9.95
+Yellow	Shay	10.11	2	TDS	9.95% Folgers 2	9.95
+DiFluid	Shay	9.92	2	TDS	9.95% Folgers 2	9.95
+DiFluid	John	9.88	2	TDS	9.95% Folgers 2	9.95
+DiFluid	Brian	9.73	2	TDS	9.95% Folgers 2	9.95
+Atago	Shay	10.28	2	TDS	9.95% Folgers 2	9.95
+Yellow	John	10.08	3	TDS	9.95% Folgers 2	9.95
+Yellow	Brian	10.16	3	TDS	9.95% Folgers 2	9.95
+Yellow	Shay	10.12	3	TDS	9.95% Folgers 2	9.95
+DiFluid	Shay	10.11	3	TDS	9.95% Folgers 2	9.95
+DiFluid	John	10.02	3	TDS	9.95% Folgers 2	9.95
+DiFluid	Brian	9.8	3	TDS	9.95% Folgers 2	9.95
+Atago	Shay	10.22	3	TDS	9.95% Folgers 2	9.95
+Yellow	John	1.91	1	TDS	2% Folgers	2
+Yellow	Brian	1.75	1	TDS	2% Folgers	2
+Yellow	Shay	1.63	1	TDS	2% Folgers	2
+DiFluid	Shay	1.74	1	TDS	2% Folgers	2
+DiFluid	John	1.88	1	TDS	2% Folgers	2
+DiFluid	Brian	1.67	1	TDS	2% Folgers	2
+Atago	Shay	1.95	1	TDS	2% Folgers	2
+Yellow	John	1.94	2	TDS	2% Folgers	2
+Yellow	Brian	1.72	2	TDS	2% Folgers	2
+Yellow	Shay	1.63	2	TDS	2% Folgers	2
+DiFluid	Shay	1.64	2	TDS	2% Folgers	2
+DiFluid	John	1.8	2	TDS	2% Folgers	2
+DiFluid	Brian	1.56	2	TDS	2% Folgers	2
+Atago	Shay	1.98	2	TDS	2% Folgers	2
+Yellow	John	1.94	3	TDS	2% Folgers	2
+Yellow	Brian	1.66	3	TDS	2% Folgers	2
+Yellow	Shay	1.65	3	TDS	2% Folgers	2
+DiFluid	Shay	1.57	3	TDS	2% Folgers	2
+DiFluid	John	1.7	3	TDS	2% Folgers	2
+DiFluid	Brian	1.45	3	TDS	2% Folgers	2
+Atago	Shay	2.01	3	TDS	2% Folgers	2
+Yellow	John	1.39	1	TDS	Filter Brew	
+Yellow	Brian	1.3	1	TDS	Filter Brew	
+Yellow	Shay	1.33	1	TDS	Filter Brew	
+DiFluid	Shay	1.26	1	TDS	Filter Brew	
+DiFluid	John	1.32	1	TDS	Filter Brew	
+DiFluid	Brian	1.18	1	TDS	Filter Brew	
+Atago	Shay	1.3	1	TDS	Filter Brew	
+Yellow	John	1.39	2	TDS	Filter Brew	
+Yellow	Brian	1.29	2	TDS	Filter Brew	
+Yellow	Shay	1.32	2	TDS	Filter Brew	
+DiFluid	Shay	1.25	2	TDS	Filter Brew	
+DiFluid	John	1.33	2	TDS	Filter Brew	
+DiFluid	Brian	1.16	2	TDS	Filter Brew	
+Atago	Shay	1.27	2	TDS	Filter Brew	
+Yellow	John	1.4	3	TDS	Filter Brew	
+Yellow	Brian	1.31	3	TDS	Filter Brew	
+Yellow	Shay	1.32	3	TDS	Filter Brew	
+DiFluid	Shay	1.24	3	TDS	Filter Brew	
+DiFluid	John	1.32	3	TDS	Filter Brew	
+DiFluid	Brian	1.14	3	TDS	Filter Brew	
+Atago	Shay	1.27	3	TDS	Filter Brew	
+Yellow	John	10.27	1	TDS	Espresso	
+Yellow	Brian	10.33	1	TDS	Espresso	
+Yellow	Shay	10.53	1	TDS	Espresso	
+DiFluid	Shay	10.64	1	TDS	Espresso	
+DiFluid	John	10.79	1	TDS	Espresso	
+DiFluid	Brian	10.48	1	TDS	Espresso	
+Atago	Shay	10.65	1	TDS	Espresso	
+Yellow	John	10.28	2	TDS	Espresso	
+Yellow	Brian	10.33	2	TDS	Espresso	
+Yellow	Shay	10.56	2	TDS	Espresso	
+DiFluid	Shay	10.64	2	TDS	Espresso	
+DiFluid	John	10.79	2	TDS	Espresso	
+DiFluid	Brian	10.46	2	TDS	Espresso	
+Atago	Shay	10.65	2	TDS	Espresso	
+Yellow	John	10.35	3	TDS	Espresso	
+Yellow	Brian	10.37	3	TDS	Espresso	
+Yellow	Shay	10.6	3	TDS	Espresso	
+DiFluid	Shay	10.61	3	TDS	Espresso	
+DiFluid	John	10.79	3	TDS	Espresso	
+DiFluid	Brian	10.49	3	TDS	Espresso	
+Atago	Shay	10.66	3	TDS	Espresso	
